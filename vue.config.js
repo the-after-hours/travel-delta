@@ -1,7 +1,7 @@
 module.exports = {
   pwa: {
-    name: 'Travel Delta'
+    name: "Travel Delta"
   },
 
-  assetsDir: 'assets'
-}
+  assetsDir: "assets"
+};
