@@ -1,8 +1,14 @@
 <template>
-  <div>
+  <b-container>
     <h1>Add a Location</h1>
     <b-form @submit.prevent="onSubmit" @reset="onReset">
-      <h3>{{ this.$props.type }}</h3>
+      <b-form-radio-group
+        v-model="location.type"
+        :options="options"
+        value-field="locationType"
+        text-field="name"
+      ></b-form-radio-group>
+
       <b-form-group
         id="location-name"
         label="Location Nickname:"
@@ -62,22 +68,25 @@
         </b-form-input>
       </b-form-group>
 
-      <b-form-group> </b-form-group>
-
       <b-button type="reset" variant="danger">Clear</b-button>
       <b-button type="submit" variant="primary">Add</b-button>
     </b-form>
-  </div>
+  </b-container>
 </template>
 
 <script>
 export default {
   name: "LocationInput",
   components: {},
-  props: { type: { type: String, required: true } },
   data() {
     return {
-      location: {}
+      location: {
+        type: "favorites"
+      },
+      options: [
+        { checked: true, locationType: "favorites", name: "Favorites" },
+        { locationType: "homes", name: "Homes" }
+      ]
     };
   },
   methods: {
@@ -87,14 +96,14 @@ export default {
         city: this.location.city,
         name: this.location.name,
         street: this.location.street,
-        type: this.$props.type,
+        type: this.location.type,
         zip: this.location.zip
       });
 
-      this.location = {};
+      this.location = { type: this.location.type };
     },
     onReset() {
-      this.location = {};
+      this.location = { type: this.location.type };
     }
   }
 };

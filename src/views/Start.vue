@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card class="m-8">
-      <LocationInput type="homes" />
+      <LocationInput />
     </b-card>
 
     <h2>Current Results</h2>
