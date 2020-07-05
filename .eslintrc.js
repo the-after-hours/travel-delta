@@ -26,7 +26,5 @@ module.exports = {
         jest: true
       }
     }
-  ],
-
-  extends: ["plugin:vue/recommended", "eslint:recommended", "@vue/prettier"]
+  ]
 };
