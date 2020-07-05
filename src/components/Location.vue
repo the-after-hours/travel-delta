@@ -1,15 +1,33 @@
 <template>
-  <div>
-    Result:
-    <h3>
-      {{ location.name }}
-    </h3>
-    <span>{{ location.street }}</span>
-    <span>{{ location.zip }}</span>
-    <span>{{ location.city }}</span>
-
-    <b-button type="primary" @click="removeLocation">Remove</b-button>
-  </div>
+  <b-container>
+    <b-card>
+      <b-row>
+        <b-col>
+          <b-row>
+            <h3>
+              {{ location.name }}
+            </h3>
+          </b-row>
+          <b-row>
+            <div>Street: {{ location.street }}</div>
+          </b-row>
+          <b-row>
+            <div>City: {{ location.city }}</div>
+          </b-row>
+          <b-row>
+            <div>Zip: {{ location.zip }}</div>
+          </b-row>
+        </b-col>
+        <b-col>
+          <b-row>
+            <b-button class="m-auto" type="primary" @click="removeLocation"
+              >Remove</b-button
+            >
+          </b-row>
+        </b-col>
+      </b-row>
+    </b-card>
+  </b-container>
 </template>
 
 <script>

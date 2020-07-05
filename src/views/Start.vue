@@ -1,14 +1,31 @@
 <template>
-  <div>
-    <b-card class="m-8">
-      <LocationInput />
-    </b-card>
-
-    <h2>Current Results</h2>
-    <div v-for="location in homes" :key="location.zip">
-      <Location :location="location" />
-    </div>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col>
+        <b-card>
+          <LocationInput />
+        </b-card>
+      </b-col>
+      <b-col>
+        <b-card>
+          <h3>Homes</h3>
+          <Location
+            v-for="location in homes"
+            :key="location.zip"
+            :location="location"
+          />
+        </b-card>
+        <b-card>
+          <h3>Favorites</h3>
+          <Location
+            v-for="favorite in favorites"
+            :key="favorite.zip"
+            :location="favorite"
+          />
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -26,9 +43,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.m-8 {
-  margin: 8px;
-}
-</style>

@@ -1,17 +1,18 @@
 <template>
-  <b-container>
+  <b-container class="text-left">
     <h1>Add a Location</h1>
     <b-form @submit.prevent="onSubmit" @reset="onReset">
-      <b-form-radio-group
-        class="radio-button-group"
-        v-model="location.type"
-        :options="options"
-        value-field="locationType"
-        text-field="name"
-        buttons
-        name="radios-btn-default"
-      ></b-form-radio-group>
-
+      <b-row class="m-8">
+        <b-form-radio-group
+          class="radio-button-group m-auto"
+          v-model="location.type"
+          :options="options"
+          value-field="locationType"
+          text-field="name"
+          buttons
+          name="radios-btn-default"
+        ></b-form-radio-group>
+      </b-row>
       <b-form-group
         id="location-name"
         label="Location Nickname:"
@@ -70,9 +71,10 @@
         >
         </b-form-input>
       </b-form-group>
-
-      <b-button type="reset" variant="danger">Clear</b-button>
-      <b-button type="submit" variant="primary">Add</b-button>
+      <b-row class="controls">
+        <b-button type="reset" variant="danger">Clear</b-button>
+        <b-button type="submit" variant="primary">Add</b-button>
+      </b-row>
     </b-form>
   </b-container>
 </template>
@@ -116,5 +118,15 @@ export default {
 .radio-button-group > .btn:not(.active) {
   background-color: white;
   color: black;
+}
+
+.m-8 {
+  margin: 8px;
+}
+
+.controls {
+  .btn {
+    margin: 8px;
+  }
 }
 </style>
