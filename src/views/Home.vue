@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <Welcome />
-    <router-link class="btn btn-primary green" to="/start"
-      >Get Started</router-link
-    >
+
+    <router-link class="btn btn-primary green" to="/start">
+      Get Started
+    </router-link>
   </div>
 </template>
 
