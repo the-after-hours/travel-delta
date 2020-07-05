@@ -3,10 +3,13 @@
     <h1>Add a Location</h1>
     <b-form @submit.prevent="onSubmit" @reset="onReset">
       <b-form-radio-group
+        class="radio-button-group"
         v-model="location.type"
         :options="options"
         value-field="locationType"
         text-field="name"
+        buttons
+        name="radios-btn-default"
       ></b-form-radio-group>
 
       <b-form-group
@@ -108,3 +111,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.radio-button-group > .btn:not(.active) {
+  background-color: white;
+  color: black;
+}
+</style>
